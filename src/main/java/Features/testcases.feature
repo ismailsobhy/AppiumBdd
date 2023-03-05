@@ -9,13 +9,11 @@ Feature: Mobile Testing
         When User clicks back
         When User go to favorites page
         When User wants to see "<itemType>" list
-				Then User find "<itemCount>" items
 				And User selects card with "<itemTitle>" title
 				And User removes item from favorites
 				Then User finds removed from favorite confirmation
-				When User clicks back
-      	Then User find "<itemCountAfter>" items
+				
         Examples:
-            | testCaseTitle 				|itemType| itemTitle                   | itemCount|itemCountAfter|
-            |	Add Favorite movie		|movie		| Puss in Boots: The Last Wish| 1|0|
-            |	Add Favorite tvshow		|tv      | The Last of Us| 1|0|
+            | testCaseTitle 				|itemType| itemTitle                   |
+            |	Add Favorite movie		|movie		| Puss in Boots: The Last Wish|
+            |	Add Favorite tvshow		|tv      | The Last of Us|

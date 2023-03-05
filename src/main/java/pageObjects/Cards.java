@@ -1,5 +1,7 @@
 package pageobjects;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -32,9 +34,19 @@ public class Cards {
 	
 	public void checkCardQuantity(int size) {
 		// Before count, wait
-		this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		List<MobileElement> elems=driver.findElements(movieCards);
 	 	Assert.assertEquals(elems.size(),size);
+	}
+	
+	public void checkCardPresence(String title,boolean expected) {
+		boolean actual=false;
+		try {
+			 driver.findElement(MobileBy.AndroidUIAutomator(movieCardByText.replace("_title_",title)));
+			 actual=true;
+		 }catch(Exception e){
+		 }
+		assertEquals(actual, expected);
+		 
 	}
 
 	

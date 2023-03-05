@@ -117,6 +117,12 @@ public class Steps {
 		cards.checkCardQuantity(count);
 	}
 	
+	@Then("^User does not find card with \"(.*)\" title$")
+	public void checkCardNotPresent(String title){
+		
+		cards.checkCardPresence(title,false);
+	}
+	
 	@When("^User go to favorites page$")
 	public void goToFavs() {
 		menuBar.clickOnShowFavButton();
