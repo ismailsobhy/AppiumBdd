@@ -44,7 +44,7 @@ public class MenuBar {
 	}
 	
 	public void clickOnShowFavButton() {
-		MobileElement element=driver.findElement(showFavoriteButton);
-		element.click();
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(this.showFavoriteButton)));
+		driver.findElement(this.showFavoriteButton).click();
 	}
 }

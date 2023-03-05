@@ -26,7 +26,7 @@ public class DetailsPage{
 			.AndroidUIAutomator("new UiSelector().resourceId(\"id.ihwan.jetpackpro.debug:id/favorite_button\")");
 	
 	public void clickOnFavButton(){
-		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(driver.findElement(favButton))));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(favButton)));
 		driver.findElement(favButton).click();	
 	}
 	

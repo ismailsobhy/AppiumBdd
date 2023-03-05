@@ -1,9 +1,11 @@
 package pageobjects;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -24,10 +26,13 @@ public class Cards {
 	private String movieCardByText="new UiSelector().textContains(\"_title_\")";
 	// Clicks on Movie or TV show
 	public void clickOnSubItem(String title) {
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(MobileBy.AndroidUIAutomator(movieCardByText.replace("_title_",title)))));
 		driver.findElement(MobileBy.AndroidUIAutomator(movieCardByText.replace("_title_",title))).click();
 	}
 	
 	public void checkCardQuantity(int size) {
+		// Before count, wait
+		this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		List<MobileElement> elems=driver.findElements(movieCards);
 	 	Assert.assertEquals(elems.size(),size);
 	}

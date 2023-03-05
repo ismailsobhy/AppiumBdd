@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import pageobjects.Cards;
@@ -46,7 +47,7 @@ public class Steps {
        
         try {
         	this.driver = new AndroidDriver<MobileElement>(new URL(props.getProperty("url")), capabilities);
-        	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);  
+        	this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         } catch (MalformedURLException e) {
         	System.out.print("problem with loading capabilities to driver");
         }
@@ -118,11 +119,12 @@ public class Steps {
 	
 	@When("^User go to favorites page$")
 	public void goToFavs() {
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);  
 		menuBar.clickOnShowFavButton();
 	}
 	
-	
-	
+	@After
+	public void tearDown(){
+		this.driver.quit();
+	}
 	
 }
