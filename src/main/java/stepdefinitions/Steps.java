@@ -47,7 +47,7 @@ public class Steps {
        
         try {
         	this.driver = new AndroidDriver<MobileElement>(new URL(props.getProperty("url")), capabilities);
-        	this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        	this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         } catch (MalformedURLException e) {
         	System.out.print("problem with loading capabilities to driver");
         }
