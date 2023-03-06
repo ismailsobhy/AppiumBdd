@@ -1,8 +1,6 @@
 # AppiumBdd
 
-Using Appium, Cucumber. The android app on https://github.com/haroldadmin/MovieDB was automated.
-
-The project applies Page object model(POM) and uses the following:
+he android app on this repo https://github.com/IhwanID/belajar-android-jetpack-pro was automated. The project applies Page object model(POM) and uses the following:
 
 - Appium.
 - Cucumber for BDD.
