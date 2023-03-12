@@ -1,6 +1,6 @@
 # AppiumBdd
 
-he android app on this repo https://github.com/IhwanID/belajar-android-jetpack-pro was automated. The project applies Page object model(POM) and uses the following:
+The automatio tests were created for android app on this repo https://github.com/IhwanID/belajar-android-jetpack-pro. The project applies Page object model(POM) and uses the following:
 
 - Appium.
 - Cucumber for BDD.
